@@ -23,5 +23,5 @@ while ch=='y':
     a=input("enter input")
     l1.add(a)
     ch=input("y/n :")
-    print(l1.pop())
+    #print(l1.pop())
 l1.printlist()
