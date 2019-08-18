@@ -1,3 +1,2 @@
-x=int(input())
-n=int(input())
-print(pow(x,n))
+N,k=map(int, input().split())
+print(N**k)
