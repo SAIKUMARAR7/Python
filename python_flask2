@@ -1,0 +1,41 @@
+from flask import *
+app=Flask(__name__)
+#@app.route('/login',methods=['POST','GET'])
+#def login():
+ #  if request.method=='POST':
+  #     user=request.form('name')
+   #    return redirect(url_for('hi', student=user))
+@app.route('/log',methods=['POST','GET'])
+def hi():
+    global w, kan
+    if request.method == 'POST':
+        w = request.form['NAME']
+    sai=[{"name":"sai","id":"22"},{"name":"nachi","id":"11"},{"name":"luke","id":"56"},{"name":"monk","id":"99"},{"name":"joseph","id":"454"},{"name":"sundar","id":"876"},{"name":"ky","id":"277"}]
+    for i in range(0,len(sai)):
+        if w==sai[i]['id']:
+            kan=sai[i]['NAME']
+    return redirect(url_for('hai',k=kan))
+
+#if __name__=='__main__':
+ #   app.run('0.0.0.0',port=5000,debug='true')
+#s=Flask(__name__)
+@app.route('/in''/<k>')
+def hai(k):
+    m=[{"name":"sai","sub":"maths","mark":"66"},{"name":"nachi","sub":"mat","mark":"56"},{"name":"monk","sub":"che","mark":"677"},{"name":"joseph","sub":"phy","mark":"89"},{"name":"sundar","sub":"biology","mark":"66"}]
+    for j in range(0,len(m)):
+        if k==m[j]['name']:
+            f=m[j]['sub']
+            v=m[j]['mark']
+            d=[f,v]
+    return str(d)
+
+if __name__=='__main__':
+    app.run('0.0.0.0',port=9000,debug='true')
+
+
+
+
+
+
+
+
